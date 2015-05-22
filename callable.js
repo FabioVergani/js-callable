@@ -2,6 +2,15 @@ var callable=(function(o){var b=o.bind;return b.call(b,o.call);})(Function.proto
 var hasOwn= callable(Object.prototype.hasOwnProperty);
 console.log(hasOwn({xx:123},'xx'));
 
+
+
+
+var log=callable(console.log,console);
+log('hello world'); // --> "hello world"
+
+
+=================================
+
 old:
 /*
 var shortCall=function(x){return Function.prototype.call.bind(x);};
